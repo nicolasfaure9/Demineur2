@@ -107,7 +107,7 @@ private final Paint background = RadialGradientBuilder.create()
                 }
             });
             plateauGui.add(guiButtons[i][j], j, i);
-            guiButtons[i][j].setPrefSize(50, 50);
+            guiButtons[i][j].setPrefSize(30, 30);
 
 
          
