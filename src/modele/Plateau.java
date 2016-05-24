@@ -21,6 +21,7 @@ public class Plateau extends Observable{
     private int nbColonnes;
     private int nbMines;
     private boolean end;
+
     private boolean win;
     private HashMap<String,Case> boutons;
     private ArrayList<int[]> indicesMines;
@@ -41,6 +42,9 @@ public class Plateau extends Observable{
     }
 
    
+    public boolean isEnd() {
+        return end;
+    }
     
     public int getNbLignes(){
         return this.nbLignes;
