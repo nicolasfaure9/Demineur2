@@ -44,8 +44,9 @@ public class Plateau extends Observable{
     }
     public int[] getPosButton(String pos){
         int [] coordonnees = {0,0};
-        coordonnees[0] = Character.getNumericValue(pos.charAt(0));
-        coordonnees[1] = Character.getNumericValue(pos.charAt(2));
+        String[] parts = pos.split(",");
+        coordonnees[0] = Integer.parseInt(parts[0]);
+        coordonnees[1] = Integer.parseInt(parts[1]);
         return coordonnees;
     }
     public HashMap<String,Case> getListBoutons(){
