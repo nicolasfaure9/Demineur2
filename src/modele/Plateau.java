@@ -36,6 +36,12 @@ public class Plateau extends Observable{
 
     }
     
+     public int getNbMines() {
+        return nbMines;
+    }
+
+   
+    
     public int getNbLignes(){
         return this.nbLignes;
     }
