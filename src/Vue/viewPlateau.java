@@ -26,6 +26,7 @@ import modele.Case;
 import modele.Plateau;
 import modele.Status;
 
+
 /**
  *
  * @author p1511086
