@@ -198,10 +198,10 @@ public class Plateau extends Observable{
     }
     public void leftClickOn(Case c){
         c.leftClick(false);
-        if(c.getNbMinesAround()==0){
+        if(c.getNbMinesAround()==0 && c.getStatus()!=Status.FLAG){
             showNeighbour(c);
         }
-        if(c.getIsAMine()){
+        if(c.getIsAMine() && c.getStatus()!=Status.FLAG){
             showAll();
             this.end = true;
             this.win = false;
@@ -217,7 +217,7 @@ public class Plateau extends Observable{
     }
     public void showNeighbour(Case c){
         for(Case voisin : c.getVoisins()){
-            if(voisin.getStatus()!=Status.VISIBLE){
+            if(voisin.getStatus()!=Status.VISIBLE && voisin.getStatus()!=Status.FLAG){
                 voisin.leftClick(false);
                 if(voisin.getNbMinesAround() == 0){
                     showNeighbour(voisin);
