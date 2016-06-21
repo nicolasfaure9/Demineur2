@@ -90,17 +90,17 @@ public class viewPlateau implements Observer {
             }
             if (cptCaseNonVisible == plateau.getNbMines()) {
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
+                alert.setTitle("Fin du jeu");
                 alert.setHeaderText(null);
-                alert.setContentText("I have a great message for you!  YOU WIN !!!!");
+                alert.setContentText("Bravo, c'est gagné ! :)");
 
                 alert.showAndWait();
             }
             if (plateau.isEnd()){
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
+                alert.setTitle("Fin du jeu");
                 alert.setHeaderText(null);
-                alert.setContentText("T'es une merde");
+                alert.setContentText("Hélas, c'est perdu ! :(");
 
                 alert.showAndWait();
             }

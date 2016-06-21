@@ -47,10 +47,11 @@ public class Case {
             this.status = Status.FLAG;
         }
     }
-    public void leftClick(){
+    public void leftClick(boolean isTheEnd){
         if(!(this.status == Status.FLAG)){
             this.status = Status.VISIBLE;
-        }     
+        }
+        else if(isTheEnd)this.status = Status.VISIBLE;
     }
     public boolean getIsAMine(){
         return this.isAMine;

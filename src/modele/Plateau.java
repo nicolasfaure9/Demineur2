@@ -197,7 +197,7 @@ public class Plateau extends Observable{
         this.notifyObservers();
     }
     public void leftClickOn(Case c){
-        c.leftClick();
+        c.leftClick(false);
         if(c.getNbMinesAround()==0){
             showNeighbour(c);
         }
@@ -212,13 +212,13 @@ public class Plateau extends Observable{
     public void showAll(){
         for(Entry<String, Case> currentEntry : this.boutons.entrySet()) {
             Case bouton = currentEntry.getValue();       
-            bouton.leftClick();
+            bouton.leftClick(true);
         }
     }
     public void showNeighbour(Case c){
         for(Case voisin : c.getVoisins()){
             if(voisin.getStatus()!=Status.VISIBLE){
-                voisin.leftClick();
+                voisin.leftClick(false);
                 if(voisin.getNbMinesAround() == 0){
                     showNeighbour(voisin);
                 }    
