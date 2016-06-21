@@ -69,6 +69,9 @@ public class viewPlateau implements Observer {
                 } else if (c.getStatus() == Status.HIDE) {
                     String style ="";                     
                     this.guiButtons[i][j].setStyle(style);
+                } else if (c.getStatus() == Status.UNDEFINED) {
+                    String style ="-fx-graphic: url('src/undefined.png');";   
+                    this.guiButtons[i][j].setStyle(style);
                 } else if (c.getStatus() == Status.VISIBLE) {
 
                     if (c.getIsAMine()) {

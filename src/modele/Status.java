@@ -12,5 +12,6 @@ package modele;
 public enum Status {
   HIDE,
   FLAG,
+  UNDEFINED,
   VISIBLE;
 }

@@ -38,6 +38,9 @@ public class Case {
     
     public void rightClick(){
         if(this.status == Status.FLAG){
+            this.status = Status.UNDEFINED;
+        }
+        else if(this.status == Status.UNDEFINED){
             this.status = Status.HIDE;
         }
         else if(this.status == Status.HIDE){
@@ -45,7 +48,9 @@ public class Case {
         }
     }
     public void leftClick(){
-        this.status = Status.VISIBLE;
+        if(!(this.status == Status.FLAG)){
+            this.status = Status.VISIBLE;
+        }     
     }
     public boolean getIsAMine(){
         return this.isAMine;
