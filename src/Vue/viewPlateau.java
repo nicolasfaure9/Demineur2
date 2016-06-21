@@ -16,6 +16,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -62,16 +64,21 @@ public class viewPlateau implements Observer {
                     cptCaseNonVisible++;
                 }
                 if (c.getStatus() == Status.FLAG) {
-                    this.guiButtons[i][j].setText("Flag");
+                    String style ="-fx-graphic: url('src/drapeau.png');";   
+                    this.guiButtons[i][j].setStyle(style);
                 } else if (c.getStatus() == Status.HIDE) {
-                    this.guiButtons[i][j].setText("");
+                    String style ="";                     
+                    this.guiButtons[i][j].setStyle(style);
                 } else if (c.getStatus() == Status.VISIBLE) {
 
                     if (c.getIsAMine()) {
-                        this.guiButtons[i][j].setText("M");
+                        String style ="-fx-graphic: url('src/mine.png');";                     
+                        this.guiButtons[i][j].setStyle(style);
                     } else if (c.getNbMinesAround() > 0) {
+                        String style ="";this.guiButtons[i][j].setStyle(style);
                         this.guiButtons[i][j].setText(Integer.toString(c.getNbMinesAround()));
                     } else {
+                        String style ="";this.guiButtons[i][j].setStyle(style); 
                         this.guiButtons[i][j].setText("");
                     }
                     this.guiButtons[i][j].setDisable(true);

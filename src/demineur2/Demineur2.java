@@ -24,7 +24,7 @@ public class Demineur2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         viewPlateau vplateau = new viewPlateau(primaryStage);
-        Plateau plateau = new Plateau(5,5,1);
+        Plateau plateau = new Plateau(25,25,75);
         plateau.addObserver(vplateau);
         plateau.initPlateau();    
         
