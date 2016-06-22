@@ -78,7 +78,26 @@ public class viewPlateau implements Observer {
                         String style ="-fx-graphic: url('src/mine.png');";                     
                         this.guiButtons[i][j].setStyle(style);
                     } else if (c.getNbMinesAround() > 0) {
-                        String style ="";this.guiButtons[i][j].setStyle(style);
+                        String style ="";
+                        if(c.getNbMinesAround() == 1){
+                            style = "-fx-color: blue";
+                        }
+                        else if(c.getNbMinesAround() == 2){
+                            style = "-fx-color: green";
+                        }
+                        else if(c.getNbMinesAround() == 3){
+                            style = "-fx-color: red";
+                        }
+                        else if(c.getNbMinesAround() == 4){
+                            style = "-fx-color: orange";
+                        }
+                        else if(c.getNbMinesAround() == 5){
+                            style = "-fx-color: pink";
+                        }
+                        else{
+                            style = "-fx-color: black";
+                        }
+                        this.guiButtons[i][j].setStyle(style);
                         this.guiButtons[i][j].setText(Integer.toString(c.getNbMinesAround()));
                     } else {
                         String style ="";this.guiButtons[i][j].setStyle(style); 
